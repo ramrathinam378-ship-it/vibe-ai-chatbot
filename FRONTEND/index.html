@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibe AI Chat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <h1>Vibe AI</h1>
+        <p class="status">Online</p>
+      </div>
+      <button id="clear-btn" type="button">Clear</button>
+    </header>
+
+    <main id="chat-box" class="chat-box" aria-live="polite" aria-label="Chat messages"></main>
+
+    <div id="typing-indicator" class="typing-indicator" role="status" aria-live="polite" hidden>
+      Vibe AI is typing...
+    </div>
+
+    <form class="input-area" id="chat-form">
+      <label for="user-input" class="sr-only">Type your message</label>
+      <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" />
+      <button id="voice-btn" type="button">🎤</button>
+      <button type="submit">➤</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
