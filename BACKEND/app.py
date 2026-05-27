@@ -5,8 +5,8 @@ from flask_cors import CORS
 from dotenv import load_dotenv
 
 load_dotenv()
-
-API_KEY = os.getenv("API_KEY", "")
+print("KEY LOADED:", bool(os.getenv("OPENROUTER_API_KEY")))
+API_KEY = os.getenv("OPENROUTER_API_KEY", "")
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 MODEL = os.getenv("MODEL", "openrouter/auto:free")
 
@@ -19,7 +19,7 @@ HEADERS = {
 
 app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY", "change-me")
-CORS(app)
+CORS(app, origins=["https://vibe-ai-chatbot-ecru.vercel.app"])
 
 chat_history = []
 
