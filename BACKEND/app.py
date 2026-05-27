@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-API_KEY = os.getenv("OPENROUTER_API_KEY", "")
+API_KEY = os.getenv("API_KEY", "")
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 MODEL = os.getenv("MODEL", "openrouter/auto:free")
 
@@ -223,4 +223,4 @@ def reset():
     return jsonify({"reply": "Chat cleared 🧹"})
 
 if __name__ == "__main__":
-    app.run(debug=True, use_reloader=False)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)), debug=False)
