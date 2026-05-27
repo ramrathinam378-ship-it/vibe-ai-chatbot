@@ -34,7 +34,7 @@ async function sendMessage(messageText = null) {
   showTyping(true);
 
   try {
-    const response = await fetch("http://127.0.0.1:5000/chat", {
+    const response = await fetch("https://vibe-ai-chatbot.onrender.com/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -74,7 +74,7 @@ async function sendMessage(messageText = null) {
 
 async function clearChat() {
   try {
-    await fetch("http://127.0.0.1:5000/reset", {
+    await fetch("https://vibe-ai-chatbot.onrender.com/reset", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ session_id: sessionId })
