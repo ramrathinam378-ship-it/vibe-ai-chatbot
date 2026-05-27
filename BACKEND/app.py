@@ -5,7 +5,7 @@ from flask_cors import CORS
 from dotenv import load_dotenv
 
 load_dotenv()
-print("KEY LOADED:", bool(os.getenv("OPENROUTER_API_KEY")))
+
 API_KEY = os.getenv("OPENROUTER_API_KEY", "")
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 MODEL = os.getenv("MODEL", "openrouter/auto:free")
